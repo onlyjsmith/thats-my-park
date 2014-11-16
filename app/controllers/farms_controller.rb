@@ -1,7 +1,7 @@
 API_ROUTE = 'http://onlyjsmith.cartodb.com/api/v2/sql'
 API_KEY = Rails.application.secrets.cartodb_api_key
-if API_KEY == 'api-key-here'
-  raise "No cartodb_api_key key specified in secrets.yml (see secrets.yml.example)"
+unless API_KEY.present?
+  raise "No cartodb_api_key key specified (set CARTODB_API_KEY env variable)"
 end
 
 # FarmsController == ClaimsController == we'll throw away
