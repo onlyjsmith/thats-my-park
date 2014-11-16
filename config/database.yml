@@ -22,3 +22,4 @@ test:
 
 production:
   <<: *default
+  database: thats_my_park_production
