@@ -28,3 +28,4 @@ gem 'spring',        group: :development
 gem 'leaflet-rails'
 gem 'rest-client'
 gem 'rails_12factor'
+gem 'sqlite3'
