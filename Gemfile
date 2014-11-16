@@ -3,6 +3,7 @@ ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,4 +28,3 @@ gem 'spring',        group: :development
 gem 'leaflet-rails'
 gem 'rest-client'
 gem 'rails_12factor'
-gem 'sqlite3'
