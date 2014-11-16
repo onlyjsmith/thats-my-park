@@ -2,6 +2,12 @@ body {
   font: 300 1.5em/1.38 'PT Sans';
   color: rgb(255, 255, 255);
   background-color: #313131;
+  height: 100%;
+}
+
+.button-row {
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -66,11 +72,11 @@ body {
   box-sizing: border-box;
 }
 
-.container .button.large {
+.button.large {
   padding-top: 20px;
 }
 
-.container .button.medium {
+.button.medium {
   padding-top: 10px;
   height: 45px;
   width: 35%;
@@ -82,7 +88,7 @@ body {
 }
 
 .button.start {
-  width: 53.5997596153%;
+  width: 70%;
   height: 79px;
   margin: 85px auto 0;
   font-size: 1.292em;
@@ -91,7 +97,7 @@ body {
 .button.mark {
   width: 68.3823529411%;
   height: 61px;
-  margin: 540px auto 0;
+  margin: 10px auto 0;
   font-size: 1.167em;
   padding-top: 13px;
 }
@@ -112,4 +118,9 @@ body {
   float: left;
   margin: 18px 0 0 6.9982%;
   background-color: rgb(167, 119, 30);
+}
+
+#map {
+  min-height: 10px;
+  height: 80%;
 }

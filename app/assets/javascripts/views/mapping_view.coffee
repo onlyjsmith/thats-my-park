@@ -10,12 +10,17 @@ class window.MappingView
     @createMap()
 
   template: (attributes) ->
+    map_height = $(document).height() - 350
     """
-      <h1>#{attributes.name}</h1>
-      <button id="finish-mapping">Finish</button>
-      <button id="undo-point">Undo last</button>
-      <div id="map" style="height: 180px;"></div>
-      <button id="mark-point">Mark Point</button>
+    <div class="button-row">
+      <a id="finish-mapping" href="#" class="button medium finish">FINISH</a>
+      <a id="undo-point" href="#" class="button medium undo">UNDO LAST</a>
+    </div>
+      <div id="map" style="height:#{map_height}px"></div>
+    <div class="clearfix">
+      <a id="mark-point" href="#" class="button large mark">MARK POINT</a>
+      <small>#{attributes.name}</small>
+    </div>
     """
 
   createMap: ->
@@ -50,6 +55,5 @@ class window.MappingView
     @farm.removePoint()
 
   finish: =>
-    alert(@farm.points)
     @farm.submitPoints()
 

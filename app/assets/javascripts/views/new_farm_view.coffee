@@ -1,10 +1,10 @@
 class window.NewFarmView
   constructor: ->
-    $('form#new_farm').on('submit', @createFarm)
+    $('#create-farm').on('click', @createFarm)
 
   createFarm: (ev) =>
     ev.preventDefault()
-    farmName = $(ev.target).find('#farm_name').val()
+    farmName = $('body').find('#farm_name').val()
     
     @triggerFarmCreated(new Farm(farmName))
 
