@@ -41,6 +41,13 @@ class window.MappingView
     @getUserLocation((latlng)=>
       @farm.addPoint(latlng)
     )
+    @renderMapPolygon()
+
+  renderMapPolygon: ->
+    @map.removeLayer(@polyline) if @polyline?
+    @polyline = L.polyline(@farm.points)
+    @polyline.addTo(@map)
+
 
   getUserLocation: (callback) ->
     foundListener = null
