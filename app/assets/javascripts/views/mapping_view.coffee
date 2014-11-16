@@ -49,7 +49,12 @@ class window.MappingView
 
   renderPath: ->
     @map.removeLayer(@boundary) if @boundary?
-    @boundary = L.polyline(@farm.points)
+
+    if @farm.points.length is 1
+      @boundary = L.marker(@farm.points[0])
+    else
+      @boundary = L.polyline(@farm.points)
+
     @boundary.addTo(@map)
 
   renderPolygon: ->
