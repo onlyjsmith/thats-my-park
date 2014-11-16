@@ -25,7 +25,7 @@ class window.Farm
   pointsToPolygon: ->
     wktPoints = []
     for point in @points
-      wktPoints.push "#{point.lat} #{point.lng}"
+      wktPoints.push "#{point.lng} #{point.lat}"
 
     wkt = "SRID=4326;POLYGON ((#{wktPoints.join()}))"
 
