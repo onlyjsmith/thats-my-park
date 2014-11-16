@@ -10,7 +10,7 @@ class window.Farm
 
   submitPoints: ->
     query = @buildInsertQuery()
-    $.post('/farms/create', query: query)
+    $.post('/farms', query: query)
 
   buildInsertQuery: ->
     """
@@ -19,4 +19,4 @@ class window.Farm
     """
 
   pointsToPolygon: ->
-    "POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))"
+    "SRID=4326;POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))"
