@@ -38,13 +38,14 @@ class window.MappingView
     $('#finish-mapping').on('click', @finish)
 
   addPoint: =>
-    @farm.addPoint(@map.getCenter())
-    @renderPath()
-
-    # @getUserLocation((latlng)=>
-    #   @farm.addPoint(latlng)
-    #   @renderPath()
-    # )
+    if getParameterByName("usemap")
+      @farm.addPoint(@map.getCenter())
+      @renderPath()
+    else
+      @getUserLocation((latlng)=>
+        @farm.addPoint(latlng)
+        @renderPath()
+      )
 
   renderPath: ->
     @map.removeLayer(@boundary) if @boundary?
