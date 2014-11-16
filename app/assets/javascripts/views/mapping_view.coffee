@@ -27,7 +27,7 @@ class window.MappingView
     @map = L.map('map').setView([51.505, -0.09], 13)
     osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-    osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib})
+    osm = new L.TileLayer(osmUrl, {attribution: osmAttrib})
     @map.addLayer(osm)
 
     @map.locate({setView : true})
@@ -38,16 +38,18 @@ class window.MappingView
     $('#finish-mapping').on('click', @finish)
 
   addPoint: =>
+    # @farm.addPoint(@map.getCenter())
+    # @renderPath()
+
     @getUserLocation((latlng)=>
       @farm.addPoint(latlng)
+      @renderPath()
     )
-    @renderMapPolygon()
 
-  renderMapPolygon: ->
+  renderPath: ->
     @map.removeLayer(@polyline) if @polyline?
     @polyline = L.polyline(@farm.points)
     @polyline.addTo(@map)
-
 
   getUserLocation: (callback) ->
     foundListener = null
