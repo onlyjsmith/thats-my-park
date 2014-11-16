@@ -3,6 +3,7 @@ body {
   color: rgb(255, 255, 255);
   background-color: #313131;
   height: 100%;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .button-row {
