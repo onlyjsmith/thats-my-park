@@ -6,6 +6,18 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
+.name-farm {
+  text-align: center;
+}
+
+.name-farm input {
+  font-size: 2em;
+  width: 90%;
+}
+
+.name-farm label {
+}
+
 .button-row {
   overflow: hidden;
   margin-bottom: 20px;
@@ -91,7 +103,7 @@ body {
 .button.start {
   width: 70%;
   height: 79px;
-  margin: 85px auto 0;
+  margin: 25px auto 0;
   font-size: 1.292em;
 }
 
