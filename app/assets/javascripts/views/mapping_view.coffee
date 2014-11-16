@@ -50,6 +50,5 @@ class window.MappingView
     @farm.removePoint()
 
   finish: =>
-    alert(@farm.points)
     @farm.submitPoints()
 

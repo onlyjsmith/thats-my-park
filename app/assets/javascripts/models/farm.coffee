@@ -9,6 +9,10 @@ class window.Farm
     @points.pop()
 
   submitPoints: ->
+    @throwIfInvalidGeom()
+    @setLastPointToFirstPoint()
+    console.log "Submitting polygon:"
+    console.log @points
     query = @buildInsertQuery()
     $.post('/farms', query: query)
 
@@ -19,4 +23,15 @@ class window.Farm
     """
 
   pointsToPolygon: ->
-    "SRID=4326;POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))"
+    wktPoints = []
+    for point in @points
+      wktPoints.push "#{point.lat} #{point.lng}"
+
+    wkt = "SRID=4326;POLYGON ((#{wktPoints.join()}))"
+
+  throwIfInvalidGeom: ->
+    unless @points.length > 2
+      throw new Error("Polygons must contain >2 points, but got #{@points.length}")
+
+  setLastPointToFirstPoint: ->
+    @points.push(@points[0])
