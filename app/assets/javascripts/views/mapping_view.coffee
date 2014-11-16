@@ -92,3 +92,12 @@ class window.MappingView
 
   submitPolygon: =>
     @farm.submitPoints()
+    @callSubmittedCallbacks()
+
+  whenSubmitted: (callback) ->
+    @submittedCallbacks ||= []
+    @submittedCallbacks.push callback
+
+  callSubmittedCallbacks: ->
+    for callback in @submittedCallbacks
+      callback(@farm)
