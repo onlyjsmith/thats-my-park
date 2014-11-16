@@ -51,4 +51,5 @@ class window.MappingView
 
   finish: =>
     alert(@farm.points)
+    @farm.submitPoints()
 
