@@ -10,7 +10,6 @@ class window.MappingView
     @createMap()
 
   template: (attributes) ->
-    console.log $(window).height()
     map_height = $(window).height() - 150
     """
     <div class="button-row">

@@ -9,7 +9,7 @@ class window.SubmittedView
     @renderFinishedMap()  
 
   template: ->
-    map_height = $(document).height() - 350
+    map_height = $(window).height() - 150
     """
       <div class="container clearfix">
         <p class="you-submitted">You submitted this boundary</p>
