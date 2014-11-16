@@ -71,14 +71,21 @@ class window.MappingView
   finish: =>
     @farm.setLastPointToFirstPoint()
     @renderPolygon()
-    @renderFinishButton()
+    @renderSubmitButton()
+
+  renderSubmitButton: ->
+    submitButton = $("""<a id="submit-button" href="#" class="button medium submit">SUBMIT</a>""")
+    $('#undo-point').before(submitButton)
+    $('#finish-mapping').remove()
+    submitButton.on('click', @submitPolygon)
+    $("#mark-point").hide()
 
   renderFinishButton: ->
-    finishButton = $("#finish-mapping")
-    submitButton = $("""<a href="#" class="button medium submit">SUBMIT</a>""")
-    finishButton.before(submitButton)
-    finishButton.remove()
-    submitButton.on('click', @submitPolygon)
+    finishButton = $("""<a id="finish-mapping" href="#" class="button medium finish">FINISH</a>""")
+    $('#undo-point').before(finishButton)
+    $('#submit-button').remove()
+    finishButton.on('click', @finish)
+    $("#mark-point").show()
 
   submitPolygon: =>
     @farm.submitPoints()
