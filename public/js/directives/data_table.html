@@ -1,0 +1,13 @@
+<button ng-click="toggleTable()">Toggle Table</button>
+{{all ? "intersecting" : "All"}} polygons.
+
+
+<table>
+  <tr>
+    <th ng-repeat="field in fieldList">{{field}}</th>
+  </tr>
+
+  <tr ng-repeat="row in rows">
+    <td ng-repeat="field in fieldList">{{row[field] | date : format : timezone}}</td>
+  </tr>
+</table>

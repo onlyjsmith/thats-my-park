@@ -1,0 +1,260 @@
+@import "compass";
+@import "susy";
+@import "breakpoint";
+
+
+
+
+/*
+  ============================================
+  #Global
+  ============================================
+*/
+$light-background: #f7fbff;
+
+
+
+
+
+/*
+  ============================================
+  #CSS RESET
+    http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+  ============================================
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+/*
+  ========================================
+  #Susy Grid
+    http://susy.oddbird.net/
+  ========================================
+*/
+
+// compass mixin
+@include border-box-sizing;
+
+$susy: (
+  global-box-sizing: border-box,
+  columns: 12,
+  container: 80%,
+  gutter-position: split,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  )
+);
+
+
+.container {
+  @include container;
+  @include breakpoint(900px) {
+    @include container(80%);
+  }
+}
+
+  .table {
+    @include span(4);
+  }
+
+  .map {
+    @include span(6);
+  }
+
+    @include breakpoint(700px) {
+
+      .maps__map {
+        @include span(1);
+      }
+
+      .maps__map:last-child {
+          @include span(last 1);
+      }
+
+    }
+
+
+  footer {
+    @include full; //clearfix
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    //background-color: $light-background;
+    padding: 10px 0;
+  }
+
+
+
+
+
+/*
+  ========================================
+  #Generic
+  ========================================
+*/
+
+.upper {
+  text-transform: uppercase;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.big-title {
+  color: #666;
+}
+
+.small-title {
+  color: #333;
+}
+
+
+
+
+
+/*
+  ========================================
+  #Typography & vertical_rhythm
+
+    http://modularscale.com
+    ----------------------
+      13px @ 1:1.5
+      13px @ 1:1.5
+    ----------------------
+
+    http://compass-style.org/reference/compass/typography/vertical_rhythm/
+  ========================================
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400,700);
+$base-font-size: 13px;  /* Scale origin */
+$base-line-height: 21px;
+@include establish-baseline;
+
+
+body {
+  font-family: 'Old Standard TT', serif;
+}
+
+h1 {
+  @include adjust-font-size-to(43.875px);
+}
+
+h3 {
+  @include adjust-font-size-to(19.500px);
+}
+
+.maps__map {
+  @include trailer();
+}
+
+.main {
+  @include trailer();
+}
+
+
+
+
+
+/*
+  ========================================
+  #Table
+  ========================================
+*/
+
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+
+
+/*
+  ========================================
+  #Map
+  ========================================
+*/
+
+//d3-map {
+//  width: 100%;
+//  height: 100%;
+//}
+
+#map {
+  height: 600px;
+}
+
+
+.q0-9 { fill:rgb(247,251,255); }
+.q1-9 { fill:rgb(222,235,247); }
+.q2-9 { fill:rgb(198,219,239); }
+.q3-9 { fill:rgb(158,202,225); }
+.q4-9 { fill:rgb(107,174,214); }
+.q5-9 { fill:rgb(66,146,198); }
+.q6-9 { fill:rgb(33,113,181); }
+.q7-9 { fill:rgb(8,81,156); }
+.q8-9 { fill:rgb(8,48,107); }
+
+.q {
+  stroke: #C4C2C2;
+  stroke-width: .5px;
+}
+
