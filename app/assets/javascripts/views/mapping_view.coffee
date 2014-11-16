@@ -38,18 +38,23 @@ class window.MappingView
     $('#finish-mapping').on('click', @finish)
 
   addPoint: =>
-    # @farm.addPoint(@map.getCenter())
-    # @renderPath()
+    @farm.addPoint(@map.getCenter())
+    @renderPath()
 
-    @getUserLocation((latlng)=>
-      @farm.addPoint(latlng)
-      @renderPath()
-    )
+    # @getUserLocation((latlng)=>
+    #   @farm.addPoint(latlng)
+    #   @renderPath()
+    # )
 
   renderPath: ->
-    @map.removeLayer(@polyline) if @polyline?
-    @polyline = L.polyline(@farm.points)
-    @polyline.addTo(@map)
+    @map.removeLayer(@boundary) if @boundary?
+    @boundary = L.polyline(@farm.points)
+    @boundary.addTo(@map)
+
+  renderPolygon: ->
+    @map.removeLayer(@boundary) if @boundary?
+    @boundary = L.polygon(@farm.points)
+    @boundary.addTo(@map)
 
   getUserLocation: (callback) ->
     foundListener = null
@@ -64,5 +69,16 @@ class window.MappingView
     @farm.removePoint()
 
   finish: =>
-    @farm.submitPoints()
+    @farm.setLastPointToFirstPoint()
+    @renderPolygon()
+    @renderFinishButton()
 
+  renderFinishButton: ->
+    finishButton = $("#finish-mapping")
+    submitButton = $("""<a href="#" class="button medium submit">SUBMIT</a>""")
+    finishButton.before(submitButton)
+    finishButton.remove()
+    submitButton.on('click', @submitPolygon)
+
+  submitPolygon: =>
+    @farm.submitPoints()

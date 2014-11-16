@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'farms#new'
+   root 'farms#start'
 
    get 'farms/start' => 'farms#start'
    get 'farms/track' => 'farms#track'
