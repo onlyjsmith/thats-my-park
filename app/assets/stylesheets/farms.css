@@ -71,6 +71,18 @@ body {
   color: rgb(255, 255, 255);
 }
 
+.view-admin {
+  width: 77.6061776061%;
+  margin: 28px auto 0;
+  font-size: 1em;
+  line-height: 1.38;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.view-admin a {
+  color: rgb(255, 255, 255);
+}
 
 .button {
   border: 0;

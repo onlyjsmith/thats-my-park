@@ -6,7 +6,7 @@ class window.SubmittedView
     $('body').html(
       @template(name: @farm.name)
     )
-    @renderFinishedMap()  
+    @renderFinishedMap()
 
   template: ->
     map_height = $(window).height() - 150
@@ -14,6 +14,9 @@ class window.SubmittedView
       <div class="container clearfix">
         <p class="you-submitted">You submitted this boundary</p>
         <div id="map" style="height:#{map_height}px"></div>
+        <p class="view-admin">
+          <a href="/admin">View other submissions and conflicts</a>
+        </p>
       </div>
     """
 
