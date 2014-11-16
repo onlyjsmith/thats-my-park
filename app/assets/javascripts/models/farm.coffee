@@ -1,5 +1,6 @@
 class window.Farm
   constructor: (@name) ->
+    @name ||= guid()
     @points = []
 
   addPoint: (point) ->

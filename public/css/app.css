@@ -11,78 +11,24 @@
     License: none (public domain)
   ============================================
 */
-@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400,700);
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
 
 body {
-  line-height: 1; }
+  font: 300 1.5em/1.38 'PT Sans';
+  color: rgb(255, 255, 255);
+  background-color: #313131;
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+}
 
-ol, ul {
-  list-style: none; }
+.big-title.center-text {
+  color: #FFA700;
+  margin-bottom: 30px;
+}
 
-blockquote, q {
-  quotes: none; }
+button.toggle-mode {
+  font-size: 2em;
+}
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-/*
-  ========================================
-  #Susy Grid
-    http://susy.oddbird.net/
-  ========================================
-*/
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.container {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto; }
-  .container:after {
-    content: " ";
-    display: block;
-    clear: both; }
-  @media (min-width: 900px) {
-    .container {
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto; }
-      .container:after {
-        content: " ";
-        display: block;
-        clear: both; } }
 
 .table {
   width: 31.66667%;
@@ -96,80 +42,12 @@ table {
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-@media (min-width: 700px) {
-  .maps__map {
-    width: 6.66667%;
-    float: left;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%; }
-
-  .maps__map:last-child {
-    width: 6.66667%;
-    float: right;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%; } }
-footer {
-  clear: both;
-  width: 98.33333%;
-  float: left;
-  margin-left: 0.83333%;
-  margin-right: 0.83333%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 10px 0; }
-
-/*
-  ========================================
-  #Generic
-  ========================================
-*/
-.upper {
-  text-transform: uppercase; }
-
-.center-text {
-  text-align: center; }
-
-.big-title {
-  color: #666; }
-
-.small-title {
-  color: #333; }
-
-/*
-  ========================================
-  #Typography & vertical_rhythm
-
-    http://modularscale.com
-    ----------------------
-      13px @ 1:1.5
-      13px @ 1:1.5
-    ----------------------
-
-    http://compass-style.org/reference/compass/typography/vertical_rhythm/
-  ========================================
-*/
-/* Scale origin */
-html {
-  font-size: 81.25%;
-  line-height: 1.61538em; }
-
-body {
-  font-family: 'Old Standard TT', serif; }
-
-h1 {
-  font-size: 3.375em;
-  line-height: 1.4359em; }
-
-h3 {
-  font-size: 1.5em;
-  line-height: 2.15385em; }
-
-.maps__map {
-  margin-bottom: 1.61538em; }
-
-.main {
-  margin-bottom: 1.61538em; }
+@media (max-width: 700px) {
+  .map, .table {
+    float: none;
+    width: 80%;
+  }
+}
 
 /*
   ========================================
@@ -192,35 +70,3 @@ td, th {
 #map {
   height: 600px; }
 
-.q0-9 {
-  fill: #f7fbff; }
-
-.q1-9 {
-  fill: #deebf7; }
-
-.q2-9 {
-  fill: #c6dbef; }
-
-.q3-9 {
-  fill: #9ecae1; }
-
-.q4-9 {
-  fill: #6baed6; }
-
-.q5-9 {
-  fill: #4292c6; }
-
-.q6-9 {
-  fill: #2171b5; }
-
-.q7-9 {
-  fill: #08519c; }
-
-.q8-9 {
-  fill: #08306b; }
-
-.q {
-  stroke: #C4C2C2;
-  stroke-width: .5px; }
-
-/*# sourceMappingURL=app.css.map */
