@@ -10,11 +10,12 @@ class window.MappingView
     @createMap()
 
   template: (attributes) ->
-    map_height = $(document).height() - 350
+    console.log $(window).height()
+    map_height = $(window).height() - 150
     """
     <div class="button-row">
       <a id="finish-mapping" href="#" class="button medium finish">FINISH</a>
-      <a id="undo-point" href="#" class="button medium undo">UNDO LAST</a>
+      <a id="undo-point" href="#" class="button medium undo">UNDO</a>
     </div>
       <div id="map" style="height:#{map_height}px"></div>
     <div class="clearfix">
