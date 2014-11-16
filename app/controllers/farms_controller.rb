@@ -1,5 +1,8 @@
 API_ROUTE = 'http://onlyjsmith.cartodb.com/api/v2/sql'
-API_KEY = '9a492f35d4a7bf7003ed82256bf9b38e39cb6eb6'
+API_KEY = Rails.application.secrets.cartodb_api_key
+if API_KEY == 'api-key-here'
+  raise "No cartodb_api_key key specified in secrets.yml (see secrets.yml.example)"
+end
 
 # FarmsController == ClaimsController == we'll throw away
 class FarmsController < ApplicationController
@@ -24,5 +27,7 @@ class FarmsController < ApplicationController
     query = params[:query]
     puts "Sending query #{API_ROUTE}?q=#{query}&api_key=#{API_KEY}"
     RestClient.get API_ROUTE, params: { q: query, api_key: API_KEY }
+
+    render json: {message: 'OK'}
   end
 end
