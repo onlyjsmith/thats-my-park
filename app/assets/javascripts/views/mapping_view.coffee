@@ -67,9 +67,10 @@ class window.MappingView
 
   deleteLastPoint: =>
     @farm.removePoint()
+    @renderPath()
+    @renderFinishButton()
 
   finish: =>
-    @farm.setLastPointToFirstPoint()
     @renderPolygon()
     @renderSubmitButton()
 
@@ -81,6 +82,7 @@ class window.MappingView
     $("#mark-point").hide()
 
   renderFinishButton: ->
+    return if $('#finish-mapping').length
     finishButton = $("""<a id="finish-mapping" href="#" class="button medium finish">FINISH</a>""")
     $('#undo-point').before(finishButton)
     $('#submit-button').remove()
