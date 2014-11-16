@@ -4,4 +4,8 @@ $(document).ready(->
 )
 
 startLocationTracking = (farm) ->
-  new MappingView(farm)
+  mappingView = new MappingView(farm)
+  mappingView.whenSubmitted(showSubmittedView)
+
+showSubmittedView = (farm)->
+  new SubmittedView(farm)
